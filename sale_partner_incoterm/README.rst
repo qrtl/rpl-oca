@@ -32,8 +32,11 @@ The field is only visible for customers (company partners and contacts) and user
 which have appropriate group 'Display incoterms on Sales Order and related
 invoices'. A different incoterm can be set per contact within the same company.
 
-When the partner is selected on a new quotation, the incoterm is retrieved from
-the partner record.
+When the customer or the delivery address is selected on a new quotation, the incoterm
+is retrieved from either of the partner record based on the following logic:
+
+* Take the incoterm of the delivery address if it has one set.
+* Otherwise, take the incoterm of the customer if it has one set.
 
 **Table of contents**
 
@@ -62,6 +65,7 @@ Contributors
 ~~~~~~~~~~~~
 
 * Stefan Rijnhart <stefan@opener.am>
+* Yoshi Tashiro <tashiro@quartile.co>
 
 Maintainers
 ~~~~~~~~~~~
