@@ -29,18 +29,18 @@ class TestSalePartnerIncoterm(TransactionCase):
         )
         # No incoterm on either partner
         sale_order = self.env["sale.order"].create({"partner_id": customer_1.id})
-        sale_order.onchange_partner_id_incoterm()
+        sale_order.onchange_partner_shipping_id()
         self.assertFalse(sale_order.incoterm)
         # Incoterm set only on delivery address
         sale_order.partner_shipping_id = customer_2
-        sale_order.onchange_partner_id_incoterm()
+        sale_order.onchange_partner_shipping_id()
         self.assertEqual(sale_order.incoterm, incoterm_exw)
         # Incoterm set only on customer
         sale_order.partner_id = customer_2
         sale_order.partner_shipping_id = customer_1
-        sale_order.onchange_partner_id_incoterm()
+        sale_order.onchange_partner_shipping_id()
         self.assertEqual(sale_order.incoterm, incoterm_exw)
         # Incoterm set on both partners
         sale_order.partner_shipping_id = customer_3
-        sale_order.onchange_partner_id_incoterm()
+        sale_order.onchange_partner_shipping_id()
         self.assertEqual(sale_order.incoterm, incoterm_fca)
