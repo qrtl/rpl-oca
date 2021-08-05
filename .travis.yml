@@ -7,13 +7,11 @@ branches:
 cache:
   directories:
     - $HOME/.cache/pip
-    # Add cache for pre-commit on repo that uses it (mandatory for >= 13)
-    - $HOME/.cache/pre-commit
 
 python:
   # For branches <= 10.0, put `- "2.7.13"`
   # For branches 11.0 and 12.0, put `- "3.5"`
-  - "3.5"
+  - "3.6"
 
 addons:
   # By default postgresql-9.1 is installed but there is issue related:
@@ -26,38 +24,27 @@ addons:
 #      https://github.com/travis-ci/apt-source-whitelist/blob/master/ubuntu.json
     packages:
       - expect-dev # provides unbuffer utility
+      - libreoffice
 #     Search your packages here:
 #       https://github.com/travis-ci/apt-package-whitelist/blob/master/ubuntu-precise
 #     For wkhtmltopdf, see the env section below
 
 # Sometimes complicated website repos need Compass & SaSS:
+#before_install:
 #  - rvm install ruby --latest
 #  - gem install bootstrap-sass
 #  - gem install compass --pre
 
 stages:
-  - linting
   - test
 
 jobs:
   include:
-    # use this linting job repos that use pre-commit (mandatory for >= 13)
-    # - stage: linting
-    #   name: "pre-commit"
-    #   python: "3.6"  # Black requires python >= 3.6
-    #   install: pip install pre-commit
-    #   script: pre-commit run --all --show-diff-on-failure --verbose --color always
-    #   after_success:
-    #   before_install:
-    # use this linting job for repos that do not use pre-commit (default for < 13)
-    # - stage: linting
-    #   env:
-    #     - LINT_CHECK="1"
     - stage: test
       env:
         # add MAKEPOT="1" to a TEST line to export .pot files from
         # the test database after test success
-        - TESTS="1" ODOO_REPO="odoo/odoo"
+        - TESTS="1" ODOO_REPO="odoo/odoo" MAKEPOT="0"
     # Other env possibilities:
     # use this to install a standalone database to export .pot files
     # - MAKEPOT="1"
@@ -70,7 +57,7 @@ jobs:
 
 env:
   global:
-    - VERSION=12.0" TESTS="0" LINT_CHECK="0" MAKEPOT="0"
+    - VERSION="12.0" TESTS="0" LINT_CHECK="0" MAKEPOT="0"
     # Set this variable to some version existing as linux-generic build on
     # https://github.com/wkhtmltopdf/wkhtmltopdf/releases
     # if you need to install wkhtmltopdf
