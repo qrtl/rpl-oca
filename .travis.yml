@@ -31,8 +31,6 @@ addons:
 #     For wkhtmltopdf, see the env section below
 
 # Sometimes complicated website repos need Compass & SaSS:
-before_install:
-  - echo -e "machine github.com\n  login $CI_USER_TOKEN" > ~/.netrc
 #  - rvm install ruby --latest
 #  - gem install bootstrap-sass
 #  - gem install compass --pre
@@ -59,7 +57,7 @@ jobs:
       env:
         # add MAKEPOT="1" to a TEST line to export .pot files from
         # the test database after test success
-        - TESTS="1" ODOO_REPO="OCA/OCB"
+        - TESTS="1" ODOO_REPO="odoo/odoo"
     # Other env possibilities:
     # use this to install a standalone database to export .pot files
     # - MAKEPOT="1"
