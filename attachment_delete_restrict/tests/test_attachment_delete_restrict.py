@@ -10,7 +10,6 @@ class TestAttachmentDeleteRestrict(SavepointCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.attachment_obj = cls.env["ir.attachment"]
         cls.partner_model = cls.env["ir.model"].search([("model", "=", "res.partner")])
         cls.test_user = cls.env["res.users"].create(
             {
@@ -18,7 +17,7 @@ class TestAttachmentDeleteRestrict(SavepointCase):
                 "login": "test@example.com",
             }
         )
-        cls.test_attachment = cls.attachment_obj.create({
+        cls.test_attachment = cls.env["ir.attachment"].create({
             "name": "test attachment",
             "type": "binary",
             "res_model": "res.partner",
