@@ -12,16 +12,11 @@ class TestAttachmentDeleteRestrict(SavepointCase):
         super().setUpClass()
         cls.partner_model = cls.env["ir.model"].search([("model", "=", "res.partner")])
         cls.test_user = cls.env["res.users"].create(
-            {
-                "name": "test user",
-                "login": "test@example.com",
-            }
+            {"name": "test user", "login": "test@example.com"}
         )
-        cls.test_attachment = cls.env["ir.attachment"].create({
-            "name": "test attachment",
-            "type": "binary",
-            "res_model": "res.partner",
-        })
+        cls.test_attachment = cls.env["ir.attachment"].create(
+            {"name": "test attachment", "type": "binary", "res_model": "res.partner"}
+        )
 
     def test_01_delete_attachment_unrestricted(self):
         self.test_attachment.sudo(self.test_user).unlink()
@@ -31,8 +26,6 @@ class TestAttachmentDeleteRestrict(SavepointCase):
         with self.assertRaises(ValidationError):
             self.test_attachment.sudo(self.test_user).unlink()
         self.test_user.write(
-            {
-                "delete_attachment_model_ids": [(4, self.partner_model.id)],
-            }
+            {"delete_attachment_model_ids": [(4, self.partner_model.id)]}
         )
         self.test_attachment.sudo(self.test_user).unlink()
