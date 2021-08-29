@@ -12,6 +12,12 @@ class IrAttachment(models.Model):
         help="When selected, the deletion of the attachments related to this model is "
         "restricted to certain users.",
     )
+    delete_attachment_group_ids = fields.Many2many(
+        "res.groups",
+        string="Attachment Deletion Groups",
+        help="The users in the groups selected here can delete the attachments related "
+        "to this model.",
+    )
     delete_attachment_user_ids = fields.Many2many(
         "res.users",
         string="Attachment Deletion Users",

@@ -8,6 +8,10 @@
     "author": "Quartile Limited, Odoo Community Association (OCA)",
     "category": "Tools",
     "license": "AGPL-3",
-    "data": ["views/ir_model_views.xml", "views/res_users_views.xml"],
+    "data": [
+        "views/ir_model_views.xml",
+        "views/res_groups_views.xml",
+        "views/res_users_views.xml",
+    ],
     "installable": True,
 }

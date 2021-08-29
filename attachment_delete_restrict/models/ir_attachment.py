@@ -19,13 +19,22 @@ class IrAttachment(models.Model):
                     ("restrict_delete_attachment", "=", True),
                 ]
             )
-            if model and self.env.uid not in model.delete_attachment_user_ids.ids:
-                user_names = "\n".join(model.delete_attachment_user_ids.mapped("name"))
-                raise ValidationError(
-                    _(
-                        "You are not allowed to delete this attachment.\n\nUsers with "
-                        "the delete permission:\n%s"
-                    )
-                    % (user_names or "None")
+            if not model:
+                continue
+            groups = model.delete_attachment_group_ids
+            if groups and self.env.user in groups.mapped("users"):
+                continue
+            users = model.delete_attachment_user_ids
+            if users and self.env.user in users:
+                continue
+            user_names = "\n".join(
+                list(set(groups.mapped("users").mapped("name") + users.mapped("name")))
+            )
+            raise ValidationError(
+                _(
+                    "You are not allowed to delete this attachment.\n\nUsers with "
+                    "the delete permission:\n%s"
                 )
+                % (user_names or "None")
+            )
         return super().unlink()
