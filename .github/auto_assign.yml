@@ -9,7 +9,8 @@ reviewers:
   - yostashiro
   - kakurai8
   - TomohiroAbe-Quartile
-  - tack_yabeQuartile
+  - tack-yabeQuartile
+  - takuyatokunaga
 
 # A list of keywords to be skipped the process that add reviewers if pull requests include it 
 skipKeywords:
