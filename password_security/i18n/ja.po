@@ -1,21 +1,26 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * password_security
+#
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2016
 msgid ""
 msgstr ""
-"Project-Id-Version: Japanese (server-auth-12.0)\n"
+"Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-19 07:44+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Japanese <https://translation.odoo-community.org/projects/"
-"server-auth-12-0/server-auth-12-0-password_security/ja/>\n"
+"POT-Creation-Date: 2017-02-22 00:55+0000\n"
+"PO-Revision-Date: 2021-11-19 09:36+0000\n"
+"Last-Translator: Tack Yabe <yabe@quartile.co>\n"
+"Language-Team: Japanese (https://www.transifex.com/oca/teams/23907/ja/)\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 4.3.2\n"
 
 #. module: password_security
-#: model:ir.model.fields,help:password_security.field_res_company__password_minimum,
+#: model:ir.model.fields,help:password_security.field_res_company__password_minimum
 #: model:ir.model.fields,help:password_security.field_res_config_settings__password_minimum
 msgid "Amount of hours until a user may change password again"
 msgstr "パスワードを再設定するまでの待機時間"
@@ -27,7 +32,7 @@ msgid "Cannot use the most recent %d passwords"
 msgstr "直近 %d 回前までのPWは使用できません"
 
 #. module: password_security
-#: model:ir.model.fields,field_description:password_security.field_res_company__password_length,
+#: model:ir.model.fields,field_description:password_security.field_res_company__password_length
 #: model:ir.model.fields,field_description:password_security.field_res_config_settings__password_length
 msgid "Characters"
 msgstr "文字数"
@@ -36,6 +41,11 @@ msgstr "文字数"
 #: model:ir.model,name:password_security.model_res_company
 msgid "Companies"
 msgstr "会社名"
+
+#. module: password_security
+#: model:ir.model,name:password_security.model_res_config_settings
+msgid "Config Settings"
+msgstr "設定"
 
 #. module: password_security
 #: model:ir.model.fields,field_description:password_security.field_res_users_pass_history__create_uid
@@ -53,13 +63,18 @@ msgid "Date"
 msgstr "日付"
 
 #. module: password_security
-#: model:ir.model.fields,field_description:password_security.field_res_company__password_expiration,
+#: model:ir.model.fields,field_description:password_security.field_res_company__password_expiration
 #: model:ir.model.fields,field_description:password_security.field_res_config_settings__password_expiration
 msgid "Days"
 msgstr "日"
 
 #. module: password_security
-#: model:ir.model.fields,help:password_security.field_res_company__password_history,
+#: model_terms:ir.ui.view,arch_db:password_security.res_config_settings_view_form
+msgid "Disallow reuse of"
+msgstr "再利用を不許可："
+
+#. module: password_security
+#: model:ir.model.fields,help:password_security.field_res_company__password_history
 #: model:ir.model.fields,help:password_security.field_res_config_settings__password_history
 msgid ""
 "Disallow reuse of this many previous passwords - use negative number for "
@@ -78,13 +93,19 @@ msgid "Encrypted Password"
 msgstr "暗号化されたパスワード"
 
 #. module: password_security
-#: model:ir.model.fields,field_description:password_security.field_res_company__password_history,
+#: model:ir.model.fields,field_description:password_security.field_res_company__password_estimate
+#: model:ir.model.fields,field_description:password_security.field_res_config_settings__password_estimate
+msgid "Estimation"
+msgstr "推定"
+
+#. module: password_security
+#: model:ir.model.fields,field_description:password_security.field_res_company__password_history
 #: model:ir.model.fields,field_description:password_security.field_res_config_settings__password_history
 msgid "History"
 msgstr "履歴"
 
 #. module: password_security
-#: model:ir.model.fields,help:password_security.field_res_company__password_expiration,
+#: model:ir.model.fields,help:password_security.field_res_company__password_expiration
 #: model:ir.model.fields,help:password_security.field_res_config_settings__password_expiration
 msgid "How many days until passwords expire"
 msgstr "パスワードの有効期限日数"
@@ -115,120 +136,23 @@ msgid "Last password update"
 msgstr "パスワードの最終更新日"
 
 #. module: password_security
-#: model:ir.model.fields,field_description:password_security.field_res_company__password_lower,
+#: model:ir.model.fields,field_description:password_security.field_res_company__password_lower
 #: model:ir.model.fields,field_description:password_security.field_res_config_settings__password_lower
 msgid "Lowercase"
 msgstr "小文字"
 
 #. module: password_security
-#: model:ir.model.fields,field_description:password_security.field_res_company__password_minimum,
+#: model:ir.model.fields,field_description:password_security.field_res_company__password_minimum
 #: model:ir.model.fields,field_description:password_security.field_res_config_settings__password_minimum
 msgid "Minimum Hours"
 msgstr "再変更までの時間"
 
 #. module: password_security
-#: model:ir.model.fields,help:password_security.field_res_company__password_length,
-#: model:ir.model.fields,help:password_security.field_res_config_settings__password_length,
+#: model:ir.model.fields,help:password_security.field_res_company__password_length
+#: model:ir.model.fields,help:password_security.field_res_config_settings__password_length
 #: model_terms:ir.ui.view,arch_db:password_security.res_config_settings_view_form
 msgid "Minimum number of characters"
 msgstr "パスワードの最小文字数"
-
-#. module: password_security
-#: code:addons/password_security/models/res_users.py:107
-#, python-format
-msgid "Must contain the following:"
-msgstr "下記の内容も満たされている必要があります:"
-
-#. module: password_security
-#: model:ir.model.fields,field_description:password_security.field_res_company__password_numeric,
-#: model:ir.model.fields,field_description:password_security.field_res_config_settings__password_numeric
-msgid "Numeric"
-msgstr "数字"
-
-#. module: password_security
-#: model:ir.model.fields,field_description:password_security.field_res_users__password_history_ids
-msgid "Password History"
-msgstr "設定パスワードの履歴"
-
-#. module: password_security
-#: model_terms:ir.ui.view,arch_db:password_security.res_config_settings_view_form
-msgid "Password Policy"
-msgstr "パスワードの設定方針"
-
-#. module: password_security
-#: code:addons/password_security/models/res_users.py:177
-#, python-format
-msgid ""
-"Passwords can only be reset every %d hour(s). Please contact an "
-"administrator for assistance."
-msgstr "パスワードの再設定は %d 時間ごとにしか実施できません。詳しくは管理者にお尋ねください。"
-
-#. module: password_security
-#: model:ir.model.fields,help:password_security.field_res_company__password_lower,
-#: model:ir.model.fields,help:password_security.field_res_config_settings__password_lower
-msgid "Require number of lowercase letters"
-msgstr "小文字の最小字数"
-
-#. module: password_security
-#: model:ir.model.fields,help:password_security.field_res_company__password_numeric,
-#: model:ir.model.fields,help:password_security.field_res_config_settings__password_numeric
-msgid "Require number of numeric digits"
-msgstr "数字の最小字数"
-
-#. module: password_security
-#: model:ir.model.fields,help:password_security.field_res_company__password_special,
-#: model:ir.model.fields,help:password_security.field_res_config_settings__password_special
-msgid "Require number of unique special characters"
-msgstr "特殊文字の最小字数"
-
-#. module: password_security
-#: model:ir.model.fields,help:password_security.field_res_company__password_upper,
-#: model:ir.model.fields,help:password_security.field_res_config_settings__password_upper
-msgid "Require number of uppercase letters"
-msgstr "大文字の最小字数"
-
-#. module: password_security
-#: model:ir.model,name:password_security.model_res_users_pass_history
-msgid "Res Users Password History"
-msgstr "登録ユーザのパスワード履歴"
-
-#. module: password_security
-#: model:ir.model.fields,field_description:password_security.field_res_company__password_special,
-#: model:ir.model.fields,field_description:password_security.field_res_config_settings__password_special
-msgid "Special"
-msgstr "特殊"
-
-#. module: password_security
-#: model:ir.model.fields,field_description:password_security.field_res_company__password_upper,
-#: model:ir.model.fields,field_description:password_security.field_res_config_settings__password_upper
-msgid "Uppercase"
-msgstr "大文字"
-
-#. module: password_security
-#: model:ir.model.fields,field_description:password_security.field_res_users_pass_history__user_id
-msgid "User"
-msgstr "ユーザ"
-
-#. module: password_security
-#: model:ir.model,name:password_security.model_res_users
-msgid "Users"
-msgstr "ユーザー"
-
-#. module: password_security
-#: model:ir.model,name:password_security.model_res_config_settings
-msgid "Config Settings"
-msgstr "設定"
-
-#. module: password_security
-#: model_terms:ir.ui.view,arch_db:password_security.res_config_settings_view_form
-msgid "Disallow reuse of"
-msgstr "再利用を不許可："
-
-#. module: password_security
-#: model:ir.model.fields,field_description:password_security.field_res_company__password_estimate,
-#: model:ir.model.fields,field_description:password_security.field_res_config_settings__password_estimate
-msgid "Estimation"
-msgstr "推定"
 
 #. module: password_security
 #: model_terms:ir.ui.view,arch_db:password_security.res_config_settings_view_form
@@ -256,15 +180,80 @@ msgid "Minimum number of uppercase characters"
 msgstr "必要文字数（大文字）"
 
 #. module: password_security
+#: code:addons/password_security/models/res_users.py:107
+#, python-format
+msgid "Must contain the following:"
+msgstr "下記の内容も満たされている必要があります:"
+
+#. module: password_security
+#: model:ir.model.fields,field_description:password_security.field_res_company__password_numeric
+#: model:ir.model.fields,field_description:password_security.field_res_config_settings__password_numeric
+msgid "Numeric"
+msgstr "数字"
+
+#. module: password_security
+#: model:ir.model.fields,field_description:password_security.field_res_users__password_history_ids
+msgid "Password History"
+msgstr "設定パスワードの履歴"
+
+#. module: password_security
+#: model_terms:ir.ui.view,arch_db:password_security.res_config_settings_view_form
+msgid "Password Policy"
+msgstr "パスワードの設定方針"
+
+#. module: password_security
 #: model_terms:ir.ui.view,arch_db:password_security.res_config_settings_view_form
 msgid "Password expires in"
 msgstr "パスワードの消失まで"
 
 #. module: password_security
-#: model:ir.model.fields,help:password_security.field_res_company__password_estimate,
+#: code:addons/password_security/models/res_users.py:177
+#, python-format
+msgid ""
+"Passwords can only be reset every %d hour(s). Please contact an "
+"administrator for assistance."
+msgstr "パスワードの再設定は %d 時間ごとにしか実施できません。詳しくは管理者にお尋ねください。"
+
+#. module: password_security
+#: model:ir.model.fields,help:password_security.field_res_company__password_lower
+#: model:ir.model.fields,help:password_security.field_res_config_settings__password_lower
+msgid "Require number of lowercase letters"
+msgstr "小文字の最小字数"
+
+#. module: password_security
+#: model:ir.model.fields,help:password_security.field_res_company__password_numeric
+#: model:ir.model.fields,help:password_security.field_res_config_settings__password_numeric
+msgid "Require number of numeric digits"
+msgstr "数字の最小字数"
+
+#. module: password_security
+#: model:ir.model.fields,help:password_security.field_res_company__password_special
+#: model:ir.model.fields,help:password_security.field_res_config_settings__password_special
+msgid "Require number of unique special characters"
+msgstr "特殊文字の最小字数"
+
+#. module: password_security
+#: model:ir.model.fields,help:password_security.field_res_company__password_upper
+#: model:ir.model.fields,help:password_security.field_res_config_settings__password_upper
+msgid "Require number of uppercase letters"
+msgstr "大文字の最小字数"
+
+#. module: password_security
+#: model:ir.model.fields,help:password_security.field_res_company__password_estimate
 #: model:ir.model.fields,help:password_security.field_res_config_settings__password_estimate
 msgid "Required score for the strength estimation. Between 0 and 4"
 msgstr "0~4の間で評価される推定のパスワード強度水準の許容下限値"
+
+#. module: password_security
+#: model:ir.model,name:password_security.model_res_users_pass_history
+msgid "Res Users Password History"
+msgstr "登録ユーザのパスワード履歴"
+
+#. module: password_security
+#: model:ir.model.fields,field_description:password_security.field_res_company__password_special
+#: model:ir.model.fields,field_description:password_security.field_res_config_settings__password_special
+msgid "Special"
+msgstr "特殊"
 
 #. module: password_security
 #: code:addons/password_security/models/res_company.py:62
@@ -273,14 +262,30 @@ msgid "The estimation must be between 0 and 4."
 msgstr "推定強度は0~4の間の数値のみ指定できます。"
 
 #. module: password_security
+#: model:ir.model.fields,field_description:password_security.field_res_company__password_upper
+#: model:ir.model.fields,field_description:password_security.field_res_config_settings__password_upper
+msgid "Uppercase"
+msgstr "大文字"
+
+#. module: password_security
 #: model_terms:ir.ui.view,arch_db:password_security.res_config_settings_view_form
 msgid "Use negative number for infinite, or 0 to disable"
 msgstr "負の値は上限なし、0の場合は機能が無効になります"
 
 #. module: password_security
+#: model:ir.model.fields,field_description:password_security.field_res_users_pass_history__user_id
+msgid "User"
+msgstr "ユーザ"
+
+#. module: password_security
 #: model_terms:ir.ui.view,arch_db:password_security.res_config_settings_view_form
 msgid "User can change password in"
 msgstr "パスワードの変更が可能になるまで"
+
+#. module: password_security
+#: model:ir.model,name:password_security.model_res_users
+msgid "Users"
+msgstr "ユーザー"
 
 #. module: password_security
 #. openerp-web
