@@ -14,7 +14,8 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
+lib/*
+!lib/zxcvbn/zxcvbn.min.js
 lib64/
 parts/
 sdist/
